@@ -19,4 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('books','BookController@getBooks');
 Route::post('book/add','BookController@addBook');
-Route::post('book/edit','BookController@editBook');
+Route::get('book/edit/{id}','BookController@editBook');
+Route::post('book/edit','BookController@doEditBook');
+Route::post('book/delete','BookController@deleteBook');
+Route::post('export','BookController@doExport');

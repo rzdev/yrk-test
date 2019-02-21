@@ -1,26 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import List from "./pages/List";
+import Add from "./pages/Add";
+import Edit from "./pages/Edit";
+import Export from "./pages/Export";
 
 class App extends Component {
+
   render() {
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Container className="paper">
+        <Row>
+          <Col>
+            <h1>Book Management</h1>
+            <Router>
+              <div>
+                <Route exact path="/" component={List} />
+                <Route path="/add" component={Add} />
+                <Route path="/edit/:id" component={Edit} />
+                <Route path="/export" component={Export} />
+              </div>
+            </Router>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }
