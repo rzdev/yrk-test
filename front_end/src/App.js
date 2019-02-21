@@ -20,7 +20,7 @@ class App extends Component {
         <Row>
           <Col>
             <h1>Book Management</h1>
-            <Router>
+            <Router basename="/book">
               <div>
                 <Route exact path="/" component={List} />
                 <Route path="/add" component={Add} />

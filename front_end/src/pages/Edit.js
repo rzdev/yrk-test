@@ -9,7 +9,7 @@ export default class Edit extends Component {
   constructor(props) {
     super(props);
 
-    this.apiEndpoint = 'http://localhost/yaraku/back_end/public/api/';
+    this.apiEndpoint = 'http://172.104.180.29/api/';
     this.state = {
       loading:false,
       submitting:false,
